@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - DB_SOURCE=postgresql://root:secret@postgres:5432/graybank?sslmode=disable
+    depends_on:
+      - postgres
+    command: ["/app/main"]
+
+  postgres:
+    image: postgres:17-alpine3.21
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=root
+      - POSTGRES_DB=graybank
+    
