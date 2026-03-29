@@ -1,4 +1,4 @@
-package entries
+package models
 
 import (
 	db "github.com/MaraSystems/graybank_api/db/sqlc"

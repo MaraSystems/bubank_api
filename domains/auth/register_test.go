@@ -9,14 +9,31 @@ import (
 
 	"github.com/MaraSystems/graybank_api/api"
 	mockdb "github.com/MaraSystems/graybank_api/db/mock"
+	db "github.com/MaraSystems/graybank_api/db/sqlc"
+	"github.com/MaraSystems/graybank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/stretchr/testify/require"
 )
 
+func dummyUser(t *testing.T) (user db.User, password string) {
+	password = utils.RandomString(8)
+	hashedPassword, err := utils.HashPassword(password)
+	require.NoError(t, err)
+
+	user = db.User{
+		Username:       utils.RandomUsername(),
+		FullName:       utils.RandomUsername(),
+		Email:          utils.RandomEmail(),
+		HashedPassword: hashedPassword,
+	}
+
+	return
+}
+
 func TestRegister(t *testing.T) {
-	user, password := DummyUser(t)
+	user, password := dummyUser(t)
 
 	testCases := []struct {
 		name          string

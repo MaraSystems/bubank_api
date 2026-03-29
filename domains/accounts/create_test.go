@@ -20,7 +20,7 @@ import (
 )
 
 func TestCreateAccount(t *testing.T) {
-	account := DummyAccount()
+	account := dummyAccount()
 
 	testCases := []struct {
 		name          string

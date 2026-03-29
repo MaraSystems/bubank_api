@@ -6,12 +6,13 @@ import (
 
 	db "github.com/MaraSystems/graybank_api/db/sqlc"
 	"github.com/MaraSystems/graybank_api/domains/accounts"
+	"github.com/MaraSystems/graybank_api/models"
 	"github.com/MaraSystems/graybank_api/utils"
 	"github.com/gin-gonic/gin"
 )
 
 func (h *EntryHandler) createEntry(ctx *gin.Context) {
-	var req CreateEntryRequest
+	var req models.CreateEntryRequest
 	if err := ctx.ShouldBindJSON(&req); err != nil {
 		ctx.JSON(http.StatusBadRequest, utils.ErrorResponse(err))
 		return
@@ -27,7 +28,7 @@ func (h *EntryHandler) createEntry(ctx *gin.Context) {
 		ID:     req.AccountID,
 	}
 
-	res := CreateEntryResponse{}
+	res := models.CreateEntryResponse{}
 	err = h.server.Store.ExecuteTx(ctx.Request.Context(), func(q *db.Queries) error {
 		var err error
 		res.Account, err = q.UpdateAccountBalance(ctx, arg)

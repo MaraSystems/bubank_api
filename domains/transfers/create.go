@@ -6,12 +6,13 @@ import (
 
 	db "github.com/MaraSystems/graybank_api/db/sqlc"
 	"github.com/MaraSystems/graybank_api/domains/accounts"
+	"github.com/MaraSystems/graybank_api/models"
 	"github.com/MaraSystems/graybank_api/utils"
 	"github.com/gin-gonic/gin"
 )
 
 func (h TransferHandler) createTransfer(ctx *gin.Context) {
-	var req CreateTransferRequest
+	var req models.CreateTransferRequest
 	if err := ctx.ShouldBindJSON(&req); err != nil {
 		ctx.JSON(http.StatusBadRequest, utils.ErrorResponse(err))
 		return
@@ -28,7 +29,7 @@ func (h TransferHandler) createTransfer(ctx *gin.Context) {
 		ToAccountID:   sql.NullInt64{Int64: req.ToAccountID, Valid: true},
 	}
 
-	res := CreateTransferResponse{}
+	res := models.CreateTransferResponse{}
 	err = h.server.Store.ExecuteTx(ctx.Request.Context(), func(q *db.Queries) error {
 		res.Transfer, err = q.CreateTransfer(ctx, arg)
 		if err != nil {

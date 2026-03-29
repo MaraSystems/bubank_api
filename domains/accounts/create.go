@@ -6,13 +6,14 @@ import (
 
 	db "github.com/MaraSystems/graybank_api/db/sqlc"
 	"github.com/MaraSystems/graybank_api/middlewares"
+	"github.com/MaraSystems/graybank_api/models"
 	"github.com/MaraSystems/graybank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5/pgconn"
 )
 
 func (h *AccountHandler) createAccount(ctx *gin.Context) {
-	var req CreateAccountRequest
+	var req models.CreateAccountRequest
 	if err := ctx.ShouldBindJSON(&req); err != nil {
 		ctx.JSON(http.StatusBadRequest, utils.ErrorResponse(err))
 		return

@@ -26,12 +26,15 @@ sqlc:
 	sqlc generate
 
 serve:
-	CompileDaemon -command="./graybank"
+	CompileDaemon -command="./graybank_api"
 
 mock:
 	mockgen -destination db/mock/store.go -package mockdb github.com/MaraSystems/graybank_api/db/sqlc Store
 
 test:
 	go test -v -cover ./...
+
+document:
+	swag fmt & swag init .
 
 .PHONY: postgres

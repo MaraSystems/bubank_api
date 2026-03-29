@@ -6,12 +6,13 @@ import (
 
 	db "github.com/MaraSystems/graybank_api/db/sqlc"
 	"github.com/MaraSystems/graybank_api/domains/accounts"
+	"github.com/MaraSystems/graybank_api/models"
 	"github.com/MaraSystems/graybank_api/utils"
 	"github.com/gin-gonic/gin"
 )
 
 func (h EntryHandler) liseEntries(ctx *gin.Context) {
-	var req ListEntriesRequest
+	var req models.ListEntriesRequest
 	if err := ctx.ShouldBindQuery(&req); err != nil {
 		ctx.JSON(http.StatusBadRequest, utils.ErrorResponse(err))
 		return

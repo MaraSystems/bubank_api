@@ -17,7 +17,7 @@ import (
 )
 
 func TestGetProfile(t *testing.T) {
-	user, _ := DummyUser(t)
+	user, _ := dummyUser(t)
 
 	testCases := []struct {
 		name          string

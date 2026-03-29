@@ -2,19 +2,26 @@ package auth
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 
 	db "github.com/MaraSystems/graybank_api/db/sqlc"
 	"github.com/MaraSystems/graybank_api/domains/users"
+	"github.com/MaraSystems/graybank_api/models"
 	"github.com/MaraSystems/graybank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5/pgconn"
 )
 
+// @Summary		User registration
+// @Description	Create a new user
+// @Tags			Auth
+// @Accept			json
+// @Produce		json
+// @Param			request	body		models.RegisterParams	true	"username of the user"
+// @Success		201		{object}	models.UserResponseParams
+// @Router			/auth/register [post]
 func (h AuthHandler) registerUser(ctx *gin.Context) {
-	println("-->> Here")
-	var req RegisterParams
+	var req models.RegisterParams
 	err := ctx.ShouldBindJSON(&req)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, utils.ErrorResponse(err))
@@ -33,8 +40,6 @@ func (h AuthHandler) registerUser(ctx *gin.Context) {
 		FullName:       req.FullName,
 		HashedPassword: hashedPassword,
 	}
-
-	fmt.Println(arg)
 
 	user, err := h.server.Store.CreateUser(ctx.Request.Context(), arg)
 	if err != nil {

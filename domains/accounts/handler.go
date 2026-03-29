@@ -2,7 +2,9 @@ package accounts
 
 import (
 	"github.com/MaraSystems/graybank_api/api"
+	db "github.com/MaraSystems/graybank_api/db/sqlc"
 	"github.com/MaraSystems/graybank_api/middlewares"
+	"github.com/MaraSystems/graybank_api/utils"
 )
 
 type AccountHandler struct {
@@ -19,4 +21,12 @@ func SetAccountsRoutes(server *api.Server) {
 	router.POST("", middlewares.AuthMiddleWare(server.TokenMaker), handler.createAccount)
 	router.GET(":id", middlewares.AuthMiddleWare(server.TokenMaker), handler.getAccount)
 	router.GET("", middlewares.AuthMiddleWare(server.TokenMaker), handler.listAccounts)
+}
+
+func dummyAccount() db.Account {
+	return db.Account{
+		Owner:    utils.RandomUsername(),
+		Balance:  100,
+		Currency: "NGN",
+	}
 }

@@ -18,7 +18,7 @@ import (
 )
 
 func TestLogin(t *testing.T) {
-	user, password := DummyUser(t)
+	user, password := dummyUser(t)
 
 	testCases := []struct {
 		name          string

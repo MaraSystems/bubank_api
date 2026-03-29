@@ -1,0 +1,117 @@
+definitions:
+  models.LoginParams:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  models.LoginResponseParams:
+    properties:
+      token:
+        type: string
+      user:
+        $ref: '#/definitions/models.UserResponseParams'
+    type: object
+  models.RegisterParams:
+    description: User registration parameter
+    properties:
+      email:
+        description: The email of the user
+        type: string
+      full_name:
+        description: The full name of the user
+        type: string
+      password:
+        description: The password of the user
+        minLength: 6
+        type: string
+      username:
+        description: The unique identity of the user
+        type: string
+    required:
+    - email
+    - full_name
+    - password
+    - username
+    type: object
+  models.UserResponseParams:
+    properties:
+      created_at:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      username:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is a dummy bank
+  title: Bank API
+  version: "1.0"
+paths:
+  /:
+    get:
+      consumes:
+      - application/json
+      description: do ping
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Ping API
+      tags:
+      - Ping
+  /auth:
+    post:
+      consumes:
+      - application/json
+      description: Log in user
+      parameters:
+      - description: credentials of the user
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginParams'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.LoginResponseParams'
+      summary: User login
+      tags:
+      - Auth
+  /auth/register:
+    post:
+      consumes:
+      - application/json
+      description: Create a new user
+      parameters:
+      - description: username of the user
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.RegisterParams'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.UserResponseParams'
+      summary: User registration
+      tags:
+      - Auth
+swagger: "2.0"

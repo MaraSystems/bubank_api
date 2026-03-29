@@ -5,13 +5,22 @@ import (
 	"net/http"
 
 	"github.com/MaraSystems/graybank_api/domains/users"
+	"github.com/MaraSystems/graybank_api/models"
 	"github.com/MaraSystems/graybank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5"
 )
 
+// @Summary		User login
+// @Description	Log in user
+// @Tags			Auth
+// @Accept			json
+// @Produce		json
+// @Param			request	body		models.LoginParams	true	"credentials of the user"
+// @Success		201		{object}	models.LoginResponseParams
+// @Router			/auth [post]
 func (h AuthHandler) loginUser(ctx *gin.Context) {
-	var req LoginParams
+	var req models.LoginParams
 	err := ctx.ShouldBindJSON(&req)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, utils.ErrorResponse(err))
@@ -41,7 +50,7 @@ func (h AuthHandler) loginUser(ctx *gin.Context) {
 		return
 	}
 
-	res := LoginResponseParams{
+	res := models.LoginResponseParams{
 		Token: token,
 		User:  users.UserResponse(user),
 	}
