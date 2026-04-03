@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package pb;
+
+import "user.proto";
+import "rpc_register.proto";
+import "rpc_login.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/MaraSystems/bubank_api/pb";
+
+// Bubank service
+service Bubank {
+    // Register rpc
+    rpc Register(RegisterRequest) returns (RegisterResponse) {
+        option (google.api.http) = {
+          post: "/v1/register"
+        };
+    };
+    // Login rpc
+    rpc Login(LoginRequest) returns (LoginResponse) {
+        option (google.api.http) = {
+          post: "/v1/login"
+        };
+    }
+}

@@ -1,10 +1,10 @@
 package accounts
 
 import (
-	"github.com/MaraSystems/graybank_api/api"
-	db "github.com/MaraSystems/graybank_api/db/sqlc"
-	"github.com/MaraSystems/graybank_api/middlewares"
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/api"
+	db "github.com/MaraSystems/bubank_api/db/sqlc"
+	"github.com/MaraSystems/bubank_api/middlewares"
+	"github.com/MaraSystems/bubank_api/utils"
 )
 
 type AccountHandler struct {

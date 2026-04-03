@@ -1,7 +1,7 @@
 package models
 
 // @Description	User registration schema
-type RegisterParams struct {
+type RegisterRequest struct {
 	// The unique identity of the user
 	Username string `json:"username" binding:"required,alphanum"`
 
@@ -16,7 +16,7 @@ type RegisterParams struct {
 }
 
 // @Description User login schema
-type LoginParams struct {
+type LoginRequest struct {
 	// The email of the user
 	Username string `json:"username" binding:"required"`
 
@@ -24,7 +24,7 @@ type LoginParams struct {
 	Password string `json:"password" binding:"required"`
 }
 
-type LoginResponseParams struct {
-	Token string             `json:"token"`
-	User  UserResponseParams `json:"user"`
+type LoginResponse struct {
+	Token string       `json:"token"`
+	User  UserResponse `json:"user"`
 }

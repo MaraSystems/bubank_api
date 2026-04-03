@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/utils"
 	"github.com/stretchr/testify/require"
 )
 

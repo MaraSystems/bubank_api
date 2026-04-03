@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/MaraSystems/graybank_api/domains/accounts"
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/domains/accounts"
+	"github.com/MaraSystems/bubank_api/utils"
 	"github.com/gin-gonic/gin"
 )
 

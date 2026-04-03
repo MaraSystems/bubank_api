@@ -4,10 +4,10 @@ import (
 	"errors"
 	"net/http"
 
-	db "github.com/MaraSystems/graybank_api/db/sqlc"
-	"github.com/MaraSystems/graybank_api/middlewares"
-	"github.com/MaraSystems/graybank_api/models"
-	"github.com/MaraSystems/graybank_api/utils"
+	db "github.com/MaraSystems/bubank_api/db/sqlc"
+	"github.com/MaraSystems/bubank_api/middlewares"
+	"github.com/MaraSystems/bubank_api/models"
+	"github.com/MaraSystems/bubank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5/pgconn"
 )

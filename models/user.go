@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-type UserResponseParams struct {
+type UserResponse struct {
 	Username  string    `json:"username"`
 	FullName  string    `json:"full_name"`
 	Email     string    `json:"email"`

@@ -8,9 +8,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/MaraSystems/graybank_api/api"
-	mockdb "github.com/MaraSystems/graybank_api/db/mock"
-	db "github.com/MaraSystems/graybank_api/db/sqlc"
+	"github.com/MaraSystems/bubank_api/api"
+	mockdb "github.com/MaraSystems/bubank_api/db/mock"
+	db "github.com/MaraSystems/bubank_api/db/sqlc"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/jackc/pgx/v5"

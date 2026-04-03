@@ -4,10 +4,10 @@ import (
 	"errors"
 	"net/http"
 
-	db "github.com/MaraSystems/graybank_api/db/sqlc"
-	"github.com/MaraSystems/graybank_api/domains/users"
-	"github.com/MaraSystems/graybank_api/models"
-	"github.com/MaraSystems/graybank_api/utils"
+	db "github.com/MaraSystems/bubank_api/db/sqlc"
+	"github.com/MaraSystems/bubank_api/domains/users"
+	"github.com/MaraSystems/bubank_api/models"
+	"github.com/MaraSystems/bubank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5/pgconn"
 )
@@ -17,11 +17,11 @@ import (
 // @Tags			Auth
 // @Accept			json
 // @Produce		json
-// @Param			request	body		models.RegisterParams	true	"username of the user"
-// @Success		201		{object}	models.UserResponseParams
+// @Param			request	body		models.RegisterRequest	true	"username of the user"
+// @Success		201		{object}	models.UserResponse
 // @Router			/auth/register [post]
 func (h AuthHandler) registerUser(ctx *gin.Context) {
-	var req models.RegisterParams
+	var req models.RegisterRequest
 	err := ctx.ShouldBindJSON(&req)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, utils.ErrorResponse(err))
@@ -56,6 +56,6 @@ func (h AuthHandler) registerUser(ctx *gin.Context) {
 		return
 	}
 
-	res := users.UserResponse(user)
+	res := users.UserToHTTP(user)
 	ctx.JSON(http.StatusCreated, res)
 }

@@ -1,7 +1,7 @@
 package validators
 
 import (
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/utils"
 	"github.com/go-playground/validator/v10"
 )
 

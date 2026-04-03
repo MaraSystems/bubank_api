@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/utils"
 	_ "github.com/jackc/pgx/v5/stdlib"
 )
 

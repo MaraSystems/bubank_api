@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/MaraSystems/graybank_api/domains/users"
-	"github.com/MaraSystems/graybank_api/middlewares"
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/domains/users"
+	"github.com/MaraSystems/bubank_api/middlewares"
+	"github.com/MaraSystems/bubank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v5"
 )
@@ -25,6 +25,6 @@ func (h AuthHandler) getProfile(ctx *gin.Context) {
 		return
 	}
 
-	rsp := users.UserResponse(user)
+	rsp := users.UserToHTTP(user)
 	ctx.JSON(http.StatusOK, rsp)
 }

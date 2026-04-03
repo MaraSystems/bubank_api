@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+import "user.proto";
+
+option go_package = "github.com/MaraSystems/bubank_api/pb";
+
+message LoginRequest {
+  string username = 1;
+  string password = 4;
+}
+
+message  LoginResponse {
+  User user = 1;
+  string token = 2;
+}

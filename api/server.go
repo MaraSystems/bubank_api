@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	db "github.com/MaraSystems/graybank_api/db/sqlc"
-	"github.com/MaraSystems/graybank_api/utils"
-	"github.com/MaraSystems/graybank_api/validators"
+	db "github.com/MaraSystems/bubank_api/db/sqlc"
+	"github.com/MaraSystems/bubank_api/utils"
+	"github.com/MaraSystems/bubank_api/validators"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"

@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/MaraSystems/graybank_api/api"
-	mockdb "github.com/MaraSystems/graybank_api/db/mock"
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/api"
+	mockdb "github.com/MaraSystems/bubank_api/db/mock"
+	"github.com/MaraSystems/bubank_api/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"

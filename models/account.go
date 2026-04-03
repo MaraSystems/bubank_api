@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/MaraSystems/graybank_api/utils"
+	"github.com/MaraSystems/bubank_api/utils"
 )
 
 type CreateAccountRequest struct {

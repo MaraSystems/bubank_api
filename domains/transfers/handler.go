@@ -1,8 +1,8 @@
 package transfers
 
 import (
-	"github.com/MaraSystems/graybank_api/api"
-	"github.com/MaraSystems/graybank_api/middlewares"
+	"github.com/MaraSystems/bubank_api/api"
+	"github.com/MaraSystems/bubank_api/middlewares"
 )
 
 type TransferHandler struct {

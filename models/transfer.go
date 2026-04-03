@@ -1,8 +1,8 @@
 package models
 
 import (
-	db "github.com/MaraSystems/graybank_api/db/sqlc"
-	"github.com/MaraSystems/graybank_api/utils"
+	db "github.com/MaraSystems/bubank_api/db/sqlc"
+	"github.com/MaraSystems/bubank_api/utils"
 )
 
 type ListTransfersRequest struct {
