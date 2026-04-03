@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.34.1
-// source: service_bubank.proto
+// source: service_graybank.proto
 
 package pb
 
@@ -21,23 +21,23 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-var File_service_bubank_proto protoreflect.FileDescriptor
+var File_service_graybank_proto protoreflect.FileDescriptor
 
-const file_service_bubank_proto_rawDesc = "" +
+const file_service_graybank_proto_rawDesc = "" +
 	"\n" +
-	"\x16service_bubank.proto\x12\x02pb\x1a\n" +
-	"user.proto\x1a\x12rpc_register.proto\x1a\x0frpc_login.proto\x1a\x1cgoogle/api/annotations.proto2\x98\x01\n" +
-	"\bBubank\x12K\n" +
+	"\x16service_graybank.proto\x12\x02pb\x1a\n" +
+	"user.proto\x1a\x12rpc_register.proto\x1a\x0frpc_login.proto\x1a\x1cgoogle/api/annotations.proto2\x96\x01\n" +
+	"\x06Bubank\x12K\n" +
 	"\bRegister\x12\x13.pb.RegisterRequest\x1a\x14.pb.RegisterResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\f/v1/register\x12?\n" +
-	"\x05Login\x12\x10.pb.LoginRequest\x1a\x11.pb.LoginResponse\"\x11\x82\xd3\xe4\x93\x02\v\"\t/v1/loginB(Z&github.com/MaraSystems/bubank_api/pbb\x06proto3"
+	"\x05Login\x12\x10.pb.LoginRequest\x1a\x11.pb.LoginResponse\"\x11\x82\xd3\xe4\x93\x02\v\"\t/v1/loginB&Z$github.com/MaraSystems/bubank_api/pbb\x06proto3"
 
-var file_service_bubank_proto_goTypes = []any{
+var file_service_graybank_proto_goTypes = []any{
 	(*RegisterRequest)(nil),  // 0: pb.RegisterRequest
 	(*LoginRequest)(nil),     // 1: pb.LoginRequest
 	(*RegisterResponse)(nil), // 2: pb.RegisterResponse
 	(*LoginResponse)(nil),    // 3: pb.LoginResponse
 }
-var file_service_bubank_proto_depIdxs = []int32{
+var file_service_graybank_proto_depIdxs = []int32{
 	0, // 0: pb.Bubank.Register:input_type -> pb.RegisterRequest
 	1, // 1: pb.Bubank.Login:input_type -> pb.LoginRequest
 	2, // 2: pb.Bubank.Register:output_type -> pb.RegisterResponse
@@ -49,9 +49,9 @@ var file_service_bubank_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_service_bubank_proto_init() }
-func file_service_bubank_proto_init() {
-	if File_service_bubank_proto != nil {
+func init() { file_service_graybank_proto_init() }
+func file_service_graybank_proto_init() {
+	if File_service_graybank_proto != nil {
 		return
 	}
 	file_user_proto_init()
@@ -61,16 +61,16 @@ func file_service_bubank_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_service_bubank_proto_rawDesc), len(file_service_bubank_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_service_graybank_proto_rawDesc), len(file_service_graybank_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_service_bubank_proto_goTypes,
-		DependencyIndexes: file_service_bubank_proto_depIdxs,
+		GoTypes:           file_service_graybank_proto_goTypes,
+		DependencyIndexes: file_service_graybank_proto_depIdxs,
 	}.Build()
-	File_service_bubank_proto = out.File
-	file_service_bubank_proto_goTypes = nil
-	file_service_bubank_proto_depIdxs = nil
+	File_service_graybank_proto = out.File
+	file_service_graybank_proto_goTypes = nil
+	file_service_graybank_proto_depIdxs = nil
 }

@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.1
 // - protoc             v7.34.1
-// source: service_bubank.proto
+// source: service_graybank.proto
 
 package pb
 
@@ -90,7 +90,7 @@ func (UnimplementedBubankServer) Login(context.Context, *LoginRequest) (*LoginRe
 	return nil, status.Error(codes.Unimplemented, "method Login not implemented")
 }
 func (UnimplementedBubankServer) mustEmbedUnimplementedBubankServer() {}
-func (UnimplementedBubankServer) testEmbeddedByValue()                  {}
+func (UnimplementedBubankServer) testEmbeddedByValue()                {}
 
 // UnsafeBubankServer may be embedded to opt out of forward compatibility for this service.
 // Use of this interface is not recommended, as added methods to BubankServer will
@@ -163,5 +163,5 @@ var Bubank_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "service_bubank.proto",
+	Metadata: "service_graybank.proto",
 }

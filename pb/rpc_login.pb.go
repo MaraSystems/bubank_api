@@ -136,7 +136,7 @@ const file_rpc_login_proto_rawDesc = "" +
 	"\bpassword\x18\x04 \x01(\tR\bpassword\"C\n" +
 	"\rLoginResponse\x12\x1c\n" +
 	"\x04user\x18\x01 \x01(\v2\b.pb.UserR\x04user\x12\x14\n" +
-	"\x05token\x18\x02 \x01(\tR\x05tokenB(Z&github.com/MaraSystems/bubank_api/pbb\x06proto3"
+	"\x05token\x18\x02 \x01(\tR\x05tokenB&Z$github.com/MaraSystems/bubank_api/pbb\x06proto3"
 
 var (
 	file_rpc_login_proto_rawDescOnce sync.Once

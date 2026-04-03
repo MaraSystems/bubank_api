@@ -145,7 +145,7 @@ const file_rpc_register_proto_rawDesc = "" +
 	"\x05email\x18\x03 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x04 \x01(\tR\bpassword\"0\n" +
 	"\x10RegisterResponse\x12\x1c\n" +
-	"\x04user\x18\x01 \x01(\v2\b.pb.UserR\x04userB(Z&github.com/MaraSystems/bubank_api/pbb\x06proto3"
+	"\x04user\x18\x01 \x01(\v2\b.pb.UserR\x04userB&Z$github.com/MaraSystems/bubank_api/pbb\x06proto3"
 
 var (
 	file_rpc_register_proto_rawDescOnce sync.Once

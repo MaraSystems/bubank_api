@@ -101,7 +101,7 @@ const file_user_proto_rawDesc = "" +
 	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x14\n" +
 	"\x05email\x18\x03 \x01(\tR\x05email\x129\n" +
 	"\n" +
-	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAtB(Z&github.com/MaraSystems/bubank_api/pbb\x06proto3"
+	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAtB&Z$github.com/MaraSystems/bubank_api/pbb\x06proto3"
 
 var (
 	file_user_proto_rawDescOnce sync.Once

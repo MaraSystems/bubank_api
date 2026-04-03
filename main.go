@@ -40,8 +40,7 @@ func main() {
 	}
 
 	store := db.NewStore(conn)
-	go runGatewayServer(config, store)
-	runGrpcServer(config, store)
+	runGinServer(config, store)
 }
 
 func runGrpcServer(config utils.Config, store db.Store) {
@@ -100,7 +99,7 @@ func runGinServer(config utils.Config, store db.Store) {
 
 	AddDomainRoutes(server)
 	docs.SwaggerInfo.BasePath = ""
-	server.Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	server.Router.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	err = server.Start(config.HTTPServerAddress)
 	if err != nil {
